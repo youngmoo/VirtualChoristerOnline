@@ -38,6 +38,7 @@ remoteVideo.addEventListener('resize', () => {
     console.log('Setup time: ' + elapsedTime.toFixed(3) + 'ms');
     startTime = null;
   }
+  console.log("Test for stats");
   
   pc2.getReceivers()[0].getStats().then(function(stats) {
     for (let stat of stats.values())
