@@ -38,6 +38,15 @@ remoteVideo.addEventListener('resize', () => {
     console.log('Setup time: ' + elapsedTime.toFixed(3) + 'ms');
     startTime = null;
   }
+  
+  pc2.getReceivers()[0].getStats().then(function(stats) {
+    for (let stat of stats.values())
+    {
+      if (stat.type === "inbound-rtp")
+        console.log(stat.lastPacketReceivedTimestamp);
+    }
+  });
+  
 });
 
 let localStream;
