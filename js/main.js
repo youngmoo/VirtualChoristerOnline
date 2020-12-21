@@ -169,7 +169,7 @@ function onSetRemoteSuccess(pc) {
 
   receivers = pc.getReceivers();
   console.log("Receivers:");
-  console.lop(receivers);
+  console.log(receivers);
 
 //  syncSources = pc.getReceivers()[0].getSynchronizationSources();
 //  console.log("Sync sources: " + syncSources);
