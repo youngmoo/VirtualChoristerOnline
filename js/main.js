@@ -167,8 +167,12 @@ function onSetRemoteSuccess(pc) {
   console.log("Test for remote receivers... and getSynchronizationSources");
   console.log(pc);
 
-  syncSources = pc.getReceivers()[0].getSynchronizationSources();
-  console.log("Sync sources: " + syncSources);
+  receivers = pc.getReceivers();
+  console.log("Receivers:");
+  console.lop(receivers);
+
+//  syncSources = pc.getReceivers()[0].getSynchronizationSources();
+//  console.log("Sync sources: " + syncSources);
   
 }
 
