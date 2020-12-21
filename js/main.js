@@ -164,16 +164,15 @@ function onSetLocalSuccess(pc) {
 function onSetRemoteSuccess(pc) {
   console.log(`${getName(pc)} setRemoteDescription complete`);
 
-  console.log("Test for remote receivers... and getSynchronizationSources");
+  console.log("Test for remote receivers... ");
   console.log(pc);
 
-  console.log("Receivers:");
-  receivers = pc.getReceivers();
+//  console.log("Receivers:");
+//  receivers = pc.getReceivers();
 //  console.log(receivers);
 
 //  syncSources = pc.getReceivers()[0].getSynchronizationSources();
 //  console.log("Sync sources: " + syncSources);
-  
 }
 
 function onSetSessionDescriptionError(error) {
