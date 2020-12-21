@@ -164,16 +164,12 @@ function onSetLocalSuccess(pc) {
 function onSetRemoteSuccess(pc) {
   console.log(`${getName(pc)} setRemoteDescription complete`);
 
-  console.log("Test for stats");
+  console.log("Test for remote receivers... and getSynchronizationSources");
   console.log(pc);
 
-/*  pc.getReceivers()[0].getStats().then(function(stats) {
-    for (let stat of stats.values())
-    {
-      if (stat.type === "inbound-rtp")
-        console.log(stat.lastPacketReceivedTimestamp);
-    }
-  }); */
+  syncSources = pc.getReceivers()[0].getSynchronizationSources();
+  console.log("Sync sources: " + syncSources);
+  
 }
 
 function onSetSessionDescriptionError(error) {
