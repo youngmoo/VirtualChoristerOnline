@@ -37,17 +37,7 @@ remoteVideo.addEventListener('resize', () => {
     const elapsedTime = window.performance.now() - startTime;
     console.log('Setup time: ' + elapsedTime.toFixed(3) + 'ms');
     startTime = null;
-  }
-  console.log("Test for stats");
-  
-  pc2.getReceivers()[0].getStats().then(function(stats) {
-    for (let stat of stats.values())
-    {
-      if (stat.type === "inbound-rtp")
-        console.log(stat.lastPacketReceivedTimestamp);
-    }
-  });
-  
+  }  
 });
 
 let localStream;
@@ -163,6 +153,17 @@ function onSetLocalSuccess(pc) {
 
 function onSetRemoteSuccess(pc) {
   console.log(`${getName(pc)} setRemoteDescription complete`);
+
+  console.log("Test for stats");
+  console.log(pc);
+
+/*  pc.getReceivers()[0].getStats().then(function(stats) {
+    for (let stat of stats.values())
+    {
+      if (stat.type === "inbound-rtp")
+        console.log(stat.lastPacketReceivedTimestamp);
+    }
+  }); */
 }
 
 function onSetSessionDescriptionError(error) {
