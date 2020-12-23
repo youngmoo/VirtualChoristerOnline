@@ -119,13 +119,15 @@ function call() {
   pc2Remote.onicecandidate = iceCallback2Remote;
   console.log('pc2: created local and remote peer connection objects');
 
-  window.localStream.getTracks().forEach(track => pc1Local.addTrack(track, window.localStream));
+//  window.localStream.getTracks().forEach(track => pc1Local.addTrack(track, window.localStream));
+  stream.getTracks().forEach(track => pc1Local.addTrack(track, stream));
   console.log('Adding local stream to pc1Local');
   pc1Local
       .createOffer(offerOptions)
       .then(gotDescription1Local, onCreateSessionDescriptionError);
 
-  window.localStream.getTracks().forEach(track => pc2Local.addTrack(track, window.localStream));
+//  window.localStream.getTracks().forEach(track => pc2Local.addTrack(track, window.localStream));
+  stream.getTracks().forEach(track => pc2Local.addTrack(track, stream));
   console.log('Adding local stream to pc2Local');
   pc2Local.createOffer(offerOptions)
       .then(gotDescription2Local, onCreateSessionDescriptionError);
