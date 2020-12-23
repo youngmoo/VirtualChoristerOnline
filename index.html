@@ -41,12 +41,26 @@
         the connection is also available (unified-plan, plan-b or default).
     </p>
 
-    <video id="localVideo" playsinline autoplay muted></video>
+ 
+    <video id="video1" playsinline controls muted>
+        <!-- NB CORS: https://bugzilla.mozilla.org/show_bug.cgi?id=1177793 -->
+        <!-- source src="../../../video/chrome.webm" type="video/webm"/ -->
+        <source src="test.mp4" type="video/mp4"/>
+        <p>This browser does not support the video element.</p>
+    </video>
+    <!-- video id="video1" playsinline autoplay muted></video -->
+    <video id="video2" playsinline autoplay></video>
+    <video id="video3" playsinline autoplay></video>
+
+
+    <!-- video id="localVideo" playsinline autoplay muted></video>
     <video id="remoteVideo" playsinline autoplay></video>
+    <video id="remoteVideo2" playsinline autoplay></video -->
 
     <div class="box">
         <button id="startButton">Start</button>
         <button id="callButton">Call</button>
+        <button id="markButton">Mark</button>
         <button id="hangupButton">Hang Up</button>
     </div>
 
