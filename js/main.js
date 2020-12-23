@@ -84,7 +84,9 @@ function mark() {
 	
 	pc1Remote.getReceivers()[0].playoutDelayHint = 0.5;
 	pc2Remote.getReceivers()[0].playoutDelayHint = 1.0;
-	
+    console.log(pc1Remote.getReceivers()[0]);
+    console.log(pc2Remote.getReceivers()[0]);
+
 //	pc2.getReceivers()[1].playoutDelayHint = 100;	
 }
 
