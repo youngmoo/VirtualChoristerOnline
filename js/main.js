@@ -78,9 +78,9 @@ function start() {
 }
 
 function mark() {
-//	markTime = window.performance.now();
-//	console.log("MARK: " + Date(markTime));
-//	console.log(markTime);
+	let markTime = window.performance.now();
+	console.log("MARK: " + Date(markTime));
+	console.log(markTime);
 	
 	pc1Remote.getReceivers()[0].playoutDelayHint = 0.5;
 	pc2Remote.getReceivers()[0].playoutDelayHint = 1.0;
