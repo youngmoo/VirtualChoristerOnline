@@ -93,8 +93,10 @@ function call() {
   callButton.disabled = true;
   hangupButton.disabled = false;
   console.log('Starting calls');
-  const audioTracks = window.localStream.getAudioTracks();
-  const videoTracks = window.localStream.getVideoTracks();
+  const audioTracks = stream.getAudioTracks();
+  const videoTracks = stream.getVideoTracks();
+//  const audioTracks = window.localStream.getAudioTracks();
+//  const videoTracks = window.localStream.getVideoTracks();
   if (audioTracks.length > 0) {
     console.log(`Using audio device: ${audioTracks[0].label}`);
   }
