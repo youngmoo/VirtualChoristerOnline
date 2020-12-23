@@ -65,6 +65,7 @@ function maybeCreateStream() {
 function start() {
   console.log('Requesting local stream');
   startButton.disabled = true;
+  callButton.disabled = false;	
 	maybeCreateStream();
 
 /*  navigator.mediaDevices
