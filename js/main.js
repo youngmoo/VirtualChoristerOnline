@@ -118,8 +118,8 @@ function call() {
   callButton.disabled = true;
   hangupButton.disabled = false;
   console.log('Starting calls');
-  const audioTracks = stream.getAudioTracks();
-  const videoTracks = stream.getVideoTracks();
+  const audioTracks = stream1.getAudioTracks();
+  const videoTracks = stream1.getVideoTracks();
 //  const audioTracks = window.localStream.getAudioTracks();
 //  const videoTracks = window.localStream.getVideoTracks();
   if (audioTracks.length > 0) {
