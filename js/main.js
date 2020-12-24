@@ -25,8 +25,9 @@ markButton.onclick = mark;
 const video1 = document.querySelector('video#video1');
 const video2 = document.querySelector('video#video2');
 const video3 = document.querySelector('video#video3');
+const video4 = document.querySelector('video#video4');
 
-let stream;
+let stream1, stream2;
 let pc1Local;
 let pc1Remote;
 let pc2Local;
@@ -36,37 +37,59 @@ const offerOptions = {
   offerToReceiveVideo: 1
 };
 
+/*
 function gotStream(stream) {
   console.log('Received local stream');
   video1.srcObject = stream;
   window.localStream = stream;
   callButton.disabled = false;
-}
+} */
 
-function maybeCreateStream() {
-  if (stream) {
+function maybeCreateStream1() {
+  if (stream1) {
     return;
   }
   if (video1.captureStream) {
-    stream = video1.captureStream();
-    console.log('Captured stream from leftVideo with captureStream',
-        stream);
+    stream1 = video1.captureStream();
+    console.log('Captured stream from video 1 with captureStream',
+        stream1);
 //    call();
   } else if (video1.mozCaptureStream) {
     stream = video1.mozCaptureStream();
-    console.log('Captured stream from leftVideo with mozCaptureStream()',
-        stream);
+    console.log('Captured stream from video 1 with mozCaptureStream()',
+        stream1);
 //    call();
   } else {
     console.log('captureStream() not supported');
   }
 }
 
+function maybeCreateStream2() {
+  if (stream2) {
+    return;
+  }
+  if (video3.captureStream) {
+    stream2 = video3.captureStream();
+    console.log('Captured stream from video 3 with captureStream',
+        stream2);
+//    call();
+  } else if (video3.mozCaptureStream) {
+    stream = video3.mozCaptureStream();
+    console.log('Captured stream from video 3 with mozCaptureStream()',
+        stream2);
+//    call();
+  } else {
+    console.log('captureStream() not supported');
+  }
+}
+
+
 function start() {
   console.log('Requesting local stream');
   startButton.disabled = true;
   callButton.disabled = false;	
-	maybeCreateStream();
+  maybeCreateStream1();
+//  maybeCreateStream2();
 
 /*  navigator.mediaDevices
       .getUserMedia({
