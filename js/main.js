@@ -105,10 +105,14 @@ function mark() {
 	console.log("MARK: " + Date(markTime));
 	console.log(markTime);
 	
-	pc1Remote.getReceivers()[0].playoutDelayHint = 0.5;
-	pc2Remote.getReceivers()[0].playoutDelayHint = 1.0;
-    console.log(pc1Remote.getReceivers()[0]);
-    console.log(pc2Remote.getReceivers()[0]);
+	pc1Remote.getReceivers()[0].playoutDelayHint = 1.0;
+	pc2Remote.getReceivers()[0].playoutDelayHint = 2.0;
+
+  video1.play();
+  setTimeout(function(){ video3.play(); }, 1000);
+
+  console.log(pc1Remote.getReceivers()[0]);
+  console.log(pc2Remote.getReceivers()[0]);
 
 //	pc2.getReceivers()[1].playoutDelayHint = 100;	
 }
