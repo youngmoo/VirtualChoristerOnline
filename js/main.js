@@ -89,7 +89,7 @@ function start() {
   startButton.disabled = true;
   callButton.disabled = false;	
   maybeCreateStream1();
-//  maybeCreateStream2();
+  maybeCreateStream2();
 
 /*  navigator.mediaDevices
       .getUserMedia({
@@ -152,7 +152,7 @@ function call() {
       .then(gotDescription1Local, onCreateSessionDescriptionError);
 
 //  window.localStream.getTracks().forEach(track => pc2Local.addTrack(track, window.localStream));
-  stream1.getTracks().forEach(track => pc2Local.addTrack(track, stream1));
+  stream2.getTracks().forEach(track => pc2Local.addTrack(track, stream2));
   console.log('Adding local stream 1 to pc2Local');
   pc2Local.createOffer(offerOptions)
       .then(gotDescription2Local, onCreateSessionDescriptionError);
