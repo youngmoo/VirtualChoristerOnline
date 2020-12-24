@@ -145,15 +145,15 @@ function call() {
   console.log('pc2: created local and remote peer connection objects');
 
 //  window.localStream.getTracks().forEach(track => pc1Local.addTrack(track, window.localStream));
-  stream.getTracks().forEach(track => pc1Local.addTrack(track, stream));
-  console.log('Adding local stream to pc1Local');
+  stream1.getTracks().forEach(track => pc1Local.addTrack(track, stream1));
+  console.log('Adding local stream 1 to pc1Local');
   pc1Local
       .createOffer(offerOptions)
       .then(gotDescription1Local, onCreateSessionDescriptionError);
 
 //  window.localStream.getTracks().forEach(track => pc2Local.addTrack(track, window.localStream));
-  stream.getTracks().forEach(track => pc2Local.addTrack(track, stream));
-  console.log('Adding local stream to pc2Local');
+  stream1.getTracks().forEach(track => pc2Local.addTrack(track, stream1));
+  console.log('Adding local stream 1 to pc2Local');
   pc2Local.createOffer(offerOptions)
       .then(gotDescription2Local, onCreateSessionDescriptionError);
 }
@@ -214,8 +214,8 @@ function gotRemoteStream1(e) {
 }
 
 function gotRemoteStream2(e) {
-  if (video3.srcObject !== e.streams[0]) {
-    video3.srcObject = e.streams[0];
+  if (video4.srcObject !== e.streams[0]) {
+    video4.srcObject = e.streams[0];
     console.log('pc2: received remote stream');
   }
 }
